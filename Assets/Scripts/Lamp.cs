@@ -15,9 +15,7 @@ public class Lamp : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		OnClick?.Invoke(this);
-		Debug.Log("Lamp1");
 	}
-
 	public void LampOn()
 	{
 		IsLight = true;

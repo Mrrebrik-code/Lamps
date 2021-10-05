@@ -13,6 +13,7 @@ public class ToggleSwitch : MonoBehaviour
 	[SerializeField] private TMP_Text _statusText;
 	[SerializeField] private float _smoothMove = 2f;
 	public bool IsEnergy = false;
+
 	public void SwitchEnergy()
 	{
 		if (!IsEnergy)
@@ -38,7 +39,6 @@ public class ToggleSwitch : MonoBehaviour
 		IsEnergy = false;
 		_toggle.rectTransform.DOAnchorPos(new Vector3(-53.1f, 0f, 1f), _smoothMove);
 	}
-
 	public void Reboot()
 	{
 		OffEnergy();

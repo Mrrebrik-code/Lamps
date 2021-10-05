@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private ButttonLamp _buttonLamp;
 
 	[SerializeField] private GameObject _infoPanel;
+
 	private void Awake()
 	{
 		_buttonLamp.SetStatus("Выключить");
@@ -26,9 +27,6 @@ public class GameManager : MonoBehaviour
 			_buttonLamp.Button.interactable = false;
 		}
 	}
-
-
-
 	private void HandlerToggleSwitch(bool energy)
 	{
 		if (energy)
@@ -53,7 +51,6 @@ public class GameManager : MonoBehaviour
 			});
 		}
 	}
-
 	public void OnCurrentLamp()
 	{
 		if (_toggleSwitch.IsEnergy)
@@ -68,18 +65,13 @@ public class GameManager : MonoBehaviour
 				_currentSelectedLamp.LampOff();
 				_buttonLamp.SetStatus("Включить");
 			}
-			
 		}
 		else
 		{
-
 			_infoPanel.SetActive(true);
 			Reboot();
 		}
-		
-		
 	}
-
 	private void HandlerClickToLamp(Lamp lamp)
 	{
 		_currentSelectedLamp = lamp;
@@ -93,7 +85,6 @@ public class GameManager : MonoBehaviour
 			_buttonLamp.SetStatus("Включить");
 		}
 	}
-
 	public void Reboot()
 	{
 		_lamps.ToList().ForEach(currentLamp =>
